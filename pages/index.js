@@ -1,11 +1,11 @@
 import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
+import styles from '../styles/Home.module.scss'
 
 export default function Home() {
   return (
     <div className="App">
       <Head>
+        <meta charSet='utf-8' />
         <title>Reza Sohrabi | Resume Website</title>
         <meta name="description" content="Reza Sohrabi is a front-end developer (react)" />
         <meta property='og:type' content='resume website' />
