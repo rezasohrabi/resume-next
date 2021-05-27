@@ -1,6 +1,7 @@
 import Head from 'next/head';
+import { Container } from '../components';
 import styles from '../styles/Home.module.scss';
-
+import * as data from './../data';
 export default function Home() {
   return (
     <div className='App'>
@@ -36,6 +37,7 @@ export default function Home() {
         />
         <link rel='icon' href='/favicon.png' />
       </Head>
+      <Container {...data} />
     </div>
   );
 }

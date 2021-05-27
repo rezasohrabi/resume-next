@@ -20,3 +20,5 @@ const LifeStory = ({ story }) => {
     </section>
   );
 };
+
+export default LifeStory;
