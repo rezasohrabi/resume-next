@@ -1,0 +1,22 @@
+@use '../../styles/utils/' as *;
+
+.iconWrapper {
+  &__icon {
+    position: relative;
+    overflow: hidden;
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media screen and (min-width: 425px) {
+  .link {
+    margin: 0 20px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .link {
+    margin: 0;
+  }
+}
