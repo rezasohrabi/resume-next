@@ -4,7 +4,7 @@ import styles from '../styles/Home.module.scss';
 import * as data from './../data';
 export default function Home() {
   return (
-    <div className='App'>
+    <div className={styles.app}>
       <Head>
         <meta charSet='utf-8' />
         <title>Reza Sohrabi | Resume Website</title>
