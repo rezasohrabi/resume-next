@@ -1,8 +1,9 @@
 import React from 'react';
+import styles from './Card.module.scss';
 
 const Card = ({ title, children, style }) => {
   return (
-    <section className='section' style={style}>
+    <section className={styles.section} style={style}>
       <h2>{title}</h2>
       {children}
     </section>
