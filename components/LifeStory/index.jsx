@@ -1,21 +1,22 @@
 import React from 'react';
+import styles from './LifeStory.module.scss';
 
 const LifeStory = ({ story }) => {
   return (
-    <section className='stotry'>
-      <div className='story__date'>{story.time}</div>
-      <a className='story__link' href={story.fromLink} target='_blank'>
-        <img className='story__image' src={story.image} />
+    <section className={styles.story}>
+      <div className={styles.story__date}>{story.time}</div>
+      <a className={styles.story__link} href={story.fromLink} target='_blank'>
+        <img className={styles.story__image} src={story.image} />
       </a>
-      <div className='story__info'>
-        <div className='header'>{story.title}</div>
+      <div className={styles.story__info}>
+        <div className={styles.header}>{story.title}</div>
         <div>
-          At :{''}
-          <a className='from-link' href={story.fromLink} target='_blank'>
+          At :{' '}
+          <a className={styles.fromLink} href={story.fromLink} target='_blank'>
             {story.from}
           </a>
         </div>
-        <div className='desc'>{story.description}</div>
+        <div className={styles.desc}>{story.description}</div>
       </div>
     </section>
   );
