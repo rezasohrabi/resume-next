@@ -14,5 +14,6 @@ jobs:
       uses: SamKirkland/FTP-Deploy-Action@4.1.0
       with:
         server: 136.243.252.177
+        port: 22
         username: ${{ secrets.ftp_username }}
         password: ${{ secrets.ftp_password }}
