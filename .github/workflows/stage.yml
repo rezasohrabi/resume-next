@@ -1,8 +1,9 @@
+name: 🚀 Deploy website on push to shared host
+
 on:
   push:
     branches:
       - dev
-name: 🚀 Deploy website on push
 jobs:
   web-deploy:
     name: 🎉 Deploy
@@ -14,7 +15,8 @@ jobs:
     - name: 📂 Sync files
       uses: SamKirkland/FTP-Deploy-Action@4.1.0
       with:
-        server: https://lh124.irandns.com
-        username: rezasoh2
-        password: ${{ secrets.password }}
+        server: ${{ secrets.ftp_server }}
+        port: ${{ secrets.ftp_port }} 
+        username: ${{ secrets.ftp_username }}
+        password: ${{ secrets.ftp_password }}
 
