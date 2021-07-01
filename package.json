@@ -9,7 +9,10 @@
     "start": "next start",
     "prepare": "husky install",
     "format": "npx prettier --write .",
-    "lint-staged": "lint-staged"
+    "lint-staged": "lint-staged",
+    "analyze": "cross-env ANALYZE=true next build",
+    "analyze:server": "cross-env BUNDLE_ANALYZE=server next build",
+    "analyze:browser": "cross-env BUNDLE_ANALYZE=browser next build"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx,json,css,scss,md}": [
@@ -21,13 +24,17 @@
     "next": "10.2.2",
     "react": "17.0.2",
     "react-dom": "17.0.2",
+    "react-redux": "^7.2.4",
+    "redux": "^4.1.0",
     "sass": "^1.34.0"
   },
   "devDependencies": {
+    "@next/bundle-analyzer": "^10.2.3",
     "@testing-library/jest-dom": "^5.12.0",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^13.1.9",
     "babel-jest": "^27.0.1",
+    "cross-env": "^7.0.3",
     "husky": "^6.0.0",
     "jest": "^27.0.1",
     "jest-dom": "^4.0.0",
