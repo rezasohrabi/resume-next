@@ -6,9 +6,21 @@ jobs:
   web-deploy:
     name: 🎉 Deploy
     runs-on: ubuntu-latest
+    strategy: 
+      matrix: 
+        node-version: [16.x]
+
     steps:
     - name: 🚚 Get latest code
       uses: actions/checkout@v2
+      
+      name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v2
+      with:
+        node-version: ${{ matrix.node-version }}
+      run: npm i
+      run: npm run build --if-present
+      run: npm run test
     
     - name: 📂 Sync files
       uses: SamKirkland/FTP-Deploy-Action@4.1.0
@@ -16,4 +28,4 @@ jobs:
         server: lh124.irandns.com
         username: ${{ secrets.ftp_username }}
         password: ${{ secrets.ftp_password }}
-        server-dir: /public_html/stage.rezasohrabi.com
+        server-dir: ${{ secrets.ftp_staging}}
