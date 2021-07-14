@@ -1,0 +1,13 @@
+.app {
+  margin: 0;
+}
+@media screen and (min-width: 900px) {
+  .app {
+    margin: 15px 3%;
+  }
+}
+@media screen and (min-width: 1300px) {
+  .app {
+    margin: 15px 10%;
+  }
+}

@@ -1,14 +1,19 @@
 import React from 'react';
+import Image from 'next/image';
+import styles from './SocialMedia.module.scss';
 
 const SocialMedia = ({ media }) => {
   return (
-    <a className='link' href={media.link} target='_blank'>
-      <img
-        className='icon-wrapper__icon'
-        src={media.src}
-        title={media.name}
-        alt={media.name}
-      />
+    <a className={styles.link} href={media.link} target='_blank'>
+      <div className={styles.iconWrapper__icon}>
+        <Image
+          src={media.src}
+          title={media.name}
+          alt={media.name}
+          width='40'
+          height='40'
+        />
+      </div>
     </a>
   );
 };

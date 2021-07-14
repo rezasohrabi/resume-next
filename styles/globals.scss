@@ -1,4 +1,4 @@
-@use './variables.scss' as *;
+@use './utils/variables' as *;
 
 * {
   box-sizing: border-box !important;
@@ -65,4 +65,20 @@ h2 {
 
 ::-webkit-scrollbar-thumb:hover {
   background: #666666;
+}
+
+body {
+  margin: 0;
+  font-family: $primary-font;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: lighter;
+  background-color: $primary-color;
+  color: $text-color;
+  line-height: 24px;
+  overflow-x: hidden;
+}
+
+p {
+  color: $text-color;
 }

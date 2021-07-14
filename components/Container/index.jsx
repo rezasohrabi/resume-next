@@ -1,14 +1,15 @@
 import React from 'react';
 import { Profile, Card, LifeStory, AbilityContainer } from '../';
+import styles from './Container.module.scss';
 
 const Container = ({ profile, lifeStories, abilities }) => {
   return (
-    <div className='container'>
+    <div className={styles.container}>
       <Profile profile={profile} />
-      <div className='separator'></div>
-      <main className='main'>
+      <div className={styles.separator}></div>
+      <main className={styles.main}>
         <Card title='Life Story' style={{ marginBottom: '15px' }}>
-          <div className='timeline'></div>
+          <div className={styles.timeline}></div>
           {lifeStories.map((story, index) => (
             <LifeStory key={index} story={story} />
           ))}

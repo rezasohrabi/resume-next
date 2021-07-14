@@ -1,0 +1,19 @@
+@use '../../styles/utils/' as *;
+
+.section {
+  background-color: $secondary-color;
+  @extend .flex-column;
+  margin-bottom: 15px;
+}
+
+@media screen and (min-width: 425px) {
+  .section {
+    position: relative;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .section {
+    margin-bottom: 0;
+  }
+}

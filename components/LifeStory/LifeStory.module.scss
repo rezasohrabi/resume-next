@@ -1,0 +1,90 @@
+@use '../../styles/utils/' as *;
+
+.story {
+  padding: 20px;
+
+  &__image {
+    width: 160px;
+    max-width: 160px;
+    height: 120px;
+    border-radius: 3px;
+    border: 3px solid $thirdary-color;
+    margin: 5px 0;
+    position: relative;
+  }
+
+  &__image::after {
+    border: 1px solid #eee;
+    position: relative;
+  }
+
+  &__info {
+    .header {
+      color: $thirdary-color;
+      font-weight: normal;
+    }
+
+    .fromLink {
+      color: inherit;
+      text-decoration: inherit;
+    }
+
+    .desc {
+      margin: 5px 0;
+    }
+  }
+}
+
+@media (min-width: 425px) {
+  .story {
+    display: flex;
+    margin: 30px 50px;
+    padding: 0;
+    z-index: 1;
+
+    &__date {
+      width: 25%;
+      padding-right: 15px;
+    }
+
+    &__link {
+      width: 25%;
+      text-align: center;
+    }
+
+    &__image {
+      width: 100%;
+      margin: 0;
+    }
+
+    &__info {
+      width: 50%;
+      padding-left: 15px;
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .story {
+    &__date {
+      flex: 1 0 10%;
+      width: auto;
+      padding: 0;
+    }
+
+    &__link {
+      width: auto;
+      margin: 0 15px;
+    }
+
+    &__image {
+      width: 160px;
+    }
+
+    &__info {
+      padding: 0;
+      flex: 1 0 45%;
+      width: auto;
+    }
+  }
+}
