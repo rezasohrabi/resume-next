@@ -85,7 +85,10 @@ function App({ Component, pageProps }) {
             src='https://www.googletagmanager.com/ns.html?id=GTM-PWN6DKR2'
             height='0'
             width='0'
-            style='display:none;visibility:hidden'
+            style={{
+              display: 'none',
+              visibility: 'hidden',
+            }}
           ></iframe>
         </noscript>
       </Head>
