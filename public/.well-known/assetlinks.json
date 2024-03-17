@@ -3,9 +3,9 @@
     "relation": ["delegate_permission/common.handle_all_urls"],
     "target": {
       "namespace": "android_app",
-      "package_name": "app.vercel.resume_next_h3w3guswn_rezasohrabi.twa",
+      "package_name": "app.vercel.resume_next_git_main_rezasohrabi.twa",
       "sha256_cert_fingerprints": [
-        "23:86:B7:73:18:82:3F:DC:A5:67:2B:12:19:9B:47:A4:F3:8E:66:35:37:27:20:01:21:47:E8:99:FE:AF:F7:9E"
+        "BE:8A:3E:AC:6D:5D:66:32:05:44:80:5E:94:E9:CA:3F:1E:AC:F5:8C:3D:5B:76:2E:5A:95:7F:D0:B4:CC:17:0C"
       ]
     }
   },
@@ -13,7 +13,7 @@
     "relation": ["check_validation"],
     "target": {
       "namespace": "cafebazaar_twa",
-      "package_name": "app.vercel.resume_next_h3w3guswn_rezasohrabi.twa"
+      "package_name": "app.vercel.resume_next_git_main_rezasohrabi.twa"
     }
   }
 ]
