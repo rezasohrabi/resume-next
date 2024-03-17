@@ -1,0 +1,19 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "app.vercel.resume_next_h3w3guswn_rezasohrabi.twa",
+      "sha256_cert_fingerprints": [
+        "23:86:B7:73:18:82:3F:DC:A5:67:2B:12:19:9B:47:A4:F3:8E:66:35:37:27:20:01:21:47:E8:99:FE:AF:F7:9E"
+      ]
+    }
+  },
+  {
+    "relation": ["check_validation"],
+    "target": {
+      "namespace": "cafebazaar_twa",
+      "package_name": "app.vercel.resume_next_h3w3guswn_rezasohrabi.twa"
+    }
+  }
+]
