@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import '../styles/globals.scss';
+import { useEffect } from 'react';
 
 function App({ Component, pageProps }) {
   function initializeHotjar() {
@@ -49,12 +50,93 @@ function App({ Component, pageProps }) {
         j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
         f.parentNode.insertBefore(j, f);
       })(window, document, 'script', 'dataLayer', 'GTM-PWN6DKR2');
+
+      // document.addEventListener('DOMContentLoaded', function () {
+      //   cookieconsent.run({
+      //     notice_banner_type: 'interstitial',
+      //     consent_type: 'express',
+      //     palette: 'dark',
+      //     language: 'en',
+      //     page_load_consent_levels: ['strictly-necessary'],
+      //     notice_banner_reject_button_hide: false,
+      //     preferences_center_close_button_hide: false,
+      //     page_refresh_confirmation_buttons: false,
+      //   });
+      // });
     }
   }
 
   initializeHotjar();
   initializeClarity();
   initializeGTM();
+
+  useEffect(() => {
+    // Initialize Cookie Consent and Google Consent Mode
+    const initializeCookieConsent = () => {
+      const script = document.createElement('script');
+      script.src =
+        'https://www.termsfeed.com/public/cookie-consent/4.2.0/cookie-consent.js';
+      script.async = true;
+      script.onload = () => {
+        window.cookieconsent.run({
+          notice_banner_type: 'interstitial',
+          consent_type: 'express',
+          palette: 'dark',
+          language: 'en',
+          page_load_consent_levels: ['strictly-necessary'],
+          notice_banner_reject_button_hide: false,
+          preferences_center_close_button_hide: false,
+          page_refresh_confirmation_buttons: false,
+          callbacks: {
+            scripts_specific_loaded: (level) => {
+              // Update Google Consent Mode based on user consent level
+              if (level === 'targeting') {
+                window.gtag('consent', 'update', {
+                  ad_storage: 'granted',
+                  ad_user_data: 'granted',
+                  ad_personalization: 'granted',
+                  analytics_storage: 'granted',
+                });
+              }
+            },
+          },
+          callbacks_force: true,
+        });
+      };
+      document.head.appendChild(script);
+    };
+
+    // Load Google Consent Mode and Google Analytics
+    const initializeGoogleConsentMode = () => {
+      window.dataLayer = window.dataLayer || [];
+      function gtag(...args) {
+        window.dataLayer.push(args);
+      }
+      window.gtag = gtag;
+
+      // Set default consent to denied
+      gtag('consent', 'default', {
+        ad_storage: 'denied',
+        ad_user_data: 'denied',
+        ad_personalization: 'denied',
+        analytics_storage: 'denied',
+      });
+
+      // Load Google Analytics script
+      const gaScript = document.createElement('script');
+      gaScript.async = true;
+      gaScript.src = `https://www.googletagmanager.com/gtag/js?id=TAG_ID`;
+      document.head.appendChild(gaScript);
+
+      // Configure Google Analytics
+      gtag('js', new Date());
+      gtag('config', 'TAG_ID');
+    };
+
+    // Initialize functions on component mount
+    initializeGoogleConsentMode();
+    initializeCookieConsent();
+  }, []);
 
   return (
     <>
@@ -90,6 +172,16 @@ function App({ Component, pageProps }) {
               visibility: 'hidden',
             }}
           ></iframe>
+        </noscript>
+        <script
+          type='text/javascript'
+          src='https://www.termsfeed.com/public/cookie-consent/4.2.0/cookie-consent.js'
+          charset='UTF-8'
+        ></script>
+
+        <noscript>
+          Free cookie consent management tool by{' '}
+          <a href='https://www.termsfeed.com/'>TermsFeed</a>
         </noscript>
       </Head>
       <Component {...pageProps} />
